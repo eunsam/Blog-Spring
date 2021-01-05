@@ -4,8 +4,6 @@ package MyBlog.demo.domain;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
@@ -27,7 +25,10 @@ public class Post {
     private LocalDateTime regDate;
 
     Post(){
-
     }
 
+    public Post(@NotNull String title, @NotNull String content) {
+        this.title = title;
+        this.content = content;
+    }
 }
